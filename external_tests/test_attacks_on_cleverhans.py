@@ -56,6 +56,7 @@ NB_ITER = 5
 seed = 6666
 torch.manual_seed(seed)
 np.random.seed(seed)
+tf.random.set_random_seed(seed)
 inputs = np.random.uniform(0, 1, size=(BATCH_SIZE, DIM_INPUT))
 targets = np.random.randint(0, NUM_CLASS, size=BATCH_SIZE)
 
