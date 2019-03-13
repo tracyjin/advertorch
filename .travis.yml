@@ -6,6 +6,7 @@ before_install:
     - travis_wait travis_retry pip install torchvision
     - travis_wait travis_retry pip install tensorflow
     - travis_wait travis_retry pip install scipy
+    - travis_wait travis_retry pip install cleverhans
 install:
     - pip install -e .
 script:
