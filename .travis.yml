@@ -8,6 +8,7 @@ before_install:
     - travis_wait travis_retry pip install scipy
     - travis_wait travis_retry pip install cleverhans
     - travis_wait travis_retry pip install foolbox
+    - travis_wait travis_retry pip install keras
 install:
     - pip install -e .
 script:
