@@ -3,6 +3,9 @@ python:
     - 3.6
 before_install:
     - travis_wait travis_retry pip install torch
+    - travis_wait travis_retry pip install torchvision
+    - travis_wait travis_retry pip install tensorflow
+    - travis_wait travis_retry pip install scipy
 install:
     - pip install -e .
 script:
