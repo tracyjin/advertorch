@@ -11,6 +11,7 @@ from __future__ import print_function
 
 import warnings
 import pytest
+import random
 
 import numpy as np
 import torch
@@ -56,6 +57,7 @@ NB_ITER = 5
 seed = 6666
 torch.manual_seed(seed)
 np.random.seed(seed)
+random.seed(seed)
 tf.random.set_random_seed(seed)
 inputs = np.random.uniform(0, 1, size=(BATCH_SIZE, DIM_INPUT))
 targets = np.random.randint(0, NUM_CLASS, size=BATCH_SIZE)
@@ -385,7 +387,9 @@ def compare_attacks(key, item, targeted=False):
                  "the test results are not reliable,"
                  " Adjust your testing parameters to avoid this."
                  )
-
+        if AdvertorchAttack is L2BasicIterativeAttack:
+            np.savez("ptb_at_4.npz", ptb_at=np.array(ptb_at))
+            np.savez("ptb_cl_4.npz", ptb_at=np.array(ptb_cl))
         compare_at_cl(ptb_at, ptb_cl, **thresholds)
 
 

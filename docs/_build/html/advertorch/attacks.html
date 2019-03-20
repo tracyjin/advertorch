@@ -1,0 +1,940 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>advertorch.attacks &mdash; advertorch_test  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="advertorch.defenses" href="defenses.html" />
+    <link rel="prev" title="user.FAQ" href="../user/FAQ.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> advertorch_test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html"><code class="docutils literal notranslate"><span class="pre">user.installation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tutorial.html"><code class="docutils literal notranslate"><span class="pre">user.tutorial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/examples.html"><code class="docutils literal notranslate"><span class="pre">user.examples</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/FAQ.html"><code class="docutils literal notranslate"><span class="pre">user.FAQ</span></code></a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">advertorch.attacks</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#attacks">Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-description">Detailed description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="defenses.html"><code class="docutils literal notranslate"><span class="pre">advertorch.defenses</span></code></a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">advertorch_test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">advertorch.attacks</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/advertorch/attacks.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advertorch-attacks">
+<h1><a class="reference internal" href="#module-advertorch.attacks" title="advertorch.attacks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">advertorch.attacks</span></code></a><a class="headerlink" href="#advertorch-attacks" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-advertorch.attacks"></span><div class="section" id="attacks">
+<h2>Attacks<a class="headerlink" href="#attacks" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.Attack" title="advertorch.attacks.Attack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Attack</span></code></a></td>
+<td>Abstract base class for all attack classes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.GradientAttack" title="advertorch.attacks.GradientAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GradientAttack</span></code></a></td>
+<td>Perturbs the input with gradient (not gradient sign) of the loss wrt the input.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.GradientSignAttack" title="advertorch.attacks.GradientSignAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GradientSignAttack</span></code></a></td>
+<td>One step fast gradient sign method (Goodfellow et al, 2014).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.FastFeatureAttack" title="advertorch.attacks.FastFeatureAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FastFeatureAttack</span></code></a></td>
+<td>Fast attack against a target internal representation of a model using gradient descent (Sabour et al.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.L2BasicIterativeAttack" title="advertorch.attacks.L2BasicIterativeAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">L2BasicIterativeAttack</span></code></a></td>
+<td>Like GradientAttack but with several steps for each epsilon.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.LinfBasicIterativeAttack" title="advertorch.attacks.LinfBasicIterativeAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinfBasicIterativeAttack</span></code></a></td>
+<td>Like GradientSignAttack but with several steps for each epsilon.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.PGDAttack" title="advertorch.attacks.PGDAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PGDAttack</span></code></a></td>
+<td>The projected gradient descent attack (Madry et al, 2017).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.LinfPGDAttack" title="advertorch.attacks.LinfPGDAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinfPGDAttack</span></code></a></td>
+<td>PGD Attack with order=Linf</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.L2PGDAttack" title="advertorch.attacks.L2PGDAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">L2PGDAttack</span></code></a></td>
+<td>PGD Attack with order=L2</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.MomentumIterativeAttack" title="advertorch.attacks.MomentumIterativeAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MomentumIterativeAttack</span></code></a></td>
+<td>The L-inf projected gradient descent attack (Dong et al.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.CarliniWagnerL2Attack" title="advertorch.attacks.CarliniWagnerL2Attack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CarliniWagnerL2Attack</span></code></a></td>
+<td>Carlini, Nicholas, and David Wagner “Towards evaluating the robustness of neural networks” 2017 IEEE Symposium on Security and Privacy (SP) IEEE, 2017.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.LBFGSAttack" title="advertorch.attacks.LBFGSAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LBFGSAttack</span></code></a></td>
+<td>The attack that uses L-BFGS to minimize the distance of the original and perturbed images</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.SinglePixelAttack" title="advertorch.attacks.SinglePixelAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SinglePixelAttack</span></code></a></td>
+<td>Single Pixel Attack Algorithm 1 in <a class="reference external" href="https://arxiv.org/pdf/1612.06299.pdf">https://arxiv.org/pdf/1612.06299.pdf</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.LocalSearchAttack" title="advertorch.attacks.LocalSearchAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LocalSearchAttack</span></code></a></td>
+<td>Local Search Attack Algorithm 3 in <a class="reference external" href="https://arxiv.org/pdf/1612.06299.pdf">https://arxiv.org/pdf/1612.06299.pdf</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.attacks.SpatialTransformAttack" title="advertorch.attacks.SpatialTransformAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpatialTransformAttack</span></code></a></td>
+<td>Sptially Transformed Attack</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.attacks.JacobianSaliencyMapAttack" title="advertorch.attacks.JacobianSaliencyMapAttack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JacobianSaliencyMapAttack</span></code></a></td>
+<td>Jacobian Saliency Map Attack This includes Algorithm 1 and 3 in v1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="detailed-description">
+<h2>Detailed description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="advertorch.attacks.Attack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">Attack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn</em>, <em>clip_min</em>, <em>clip_max</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.Attack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract base class for all attack classes.</p>
+<dl class="method">
+<dt id="advertorch.attacks.Attack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.Attack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the adversarial examples. This method should be overriden
+in any child class that implements an actual attack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the model’s input tensor.</li>
+<li><strong>**kwargs</strong> – <p>optional parameters used by child classes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">adversarial examples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.GradientAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">GradientAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.GradientAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perturbs the input with gradient (not gradient sign) of the loss wrt the
+input.</p>
+<dl class="method">
+<dt id="advertorch.attacks.GradientAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.GradientAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given examples (x, y), returns their adversarial counterparts with
+an attack length of eps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – input tensor.</li>
+<li><strong>y</strong> – <p>label tensor.
+- if None and self.targeted=False, compute y as predicted</p>
+<blockquote>
+<div>labels.</div></blockquote>
+<ul>
+<li>if self.targeted=True, then y must be the targeted labels.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tensor containing perturbed inputs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.GradientSignAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">GradientSignAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.GradientSignAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>One step fast gradient sign method (Goodfellow et al, 2014).
+Paper: <a class="reference external" href="https://arxiv.org/abs/1412.6572">https://arxiv.org/abs/1412.6572</a></p>
+<dl class="method">
+<dt id="advertorch.attacks.GradientSignAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.GradientSignAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given examples (x, y), returns their adversarial counterparts with
+an attack length of eps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – input tensor.</li>
+<li><strong>y</strong> – <p>label tensor.
+- if None and self.targeted=False, compute y as predicted</p>
+<blockquote>
+<div>labels.</div></blockquote>
+<ul>
+<li>if self.targeted=True, then y must be the targeted labels.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tensor containing perturbed inputs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.FastFeatureAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">FastFeatureAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>eps_iter=0.05</em>, <em>nb_iter=10</em>, <em>rand_init=True</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.FastFeatureAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fast attack against a target internal representation of a model using
+gradient descent (Sabour et al. 2016).
+Paper: <a class="reference external" href="https://arxiv.org/abs/1511.05122">https://arxiv.org/abs/1511.05122</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function.</li>
+<li><strong>eps</strong> – maximum distortion.</li>
+<li><strong>eps_iter</strong> – attack step size.</li>
+<li><strong>nb_iter</strong> – number of iterations</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.FastFeatureAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>source</em>, <em>guide</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.FastFeatureAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given source, returns their adversarial counterparts
+with representations close to that of the guide.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> – input tensor which we want to perturb.</li>
+<li><strong>guide</strong> – targeted input.</li>
+<li><strong>delta</strong> – tensor contains the random initialization.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tensor containing perturbed inputs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.L2BasicIterativeAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">L2BasicIterativeAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.1</em>, <em>nb_iter=10</em>, <em>eps_iter=0.05</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.L2BasicIterativeAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like GradientAttack but with several steps for each epsilon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function.</li>
+<li><strong>eps</strong> – maximum distortion.</li>
+<li><strong>nb_iter</strong> – number of iterations.</li>
+<li><strong>eps_iter</strong> – attack step size.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.LinfBasicIterativeAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">LinfBasicIterativeAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.1</em>, <em>nb_iter=10</em>, <em>eps_iter=0.05</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.LinfBasicIterativeAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like GradientSignAttack but with several steps for each epsilon.
+Aka Basic Iterative Attack.
+Paper: <a class="reference external" href="https://arxiv.org/pdf/1611.01236.pdf">https://arxiv.org/pdf/1611.01236.pdf</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function.</li>
+<li><strong>eps</strong> – maximum distortion.</li>
+<li><strong>nb_iter</strong> – number of iterations.</li>
+<li><strong>eps_iter</strong> – attack step size.</li>
+<li><strong>rand_init</strong> – (optional bool) random initialization.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>ord</strong> – (optional) the order of maximum distortion (inf or 2).</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.PGDAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">PGDAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>nb_iter=40</em>, <em>eps_iter=0.01</em>, <em>rand_init=True</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>ord=&lt;Mock name='mock.inf' id='4493153224'&gt;</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.PGDAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>The projected gradient descent attack (Madry et al, 2017).
+The attack performs nb_iter steps of size eps_iter, while always staying
+within eps from the initial point.
+Paper: <a class="reference external" href="https://arxiv.org/pdf/1706.06083.pdf">https://arxiv.org/pdf/1706.06083.pdf</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function.</li>
+<li><strong>eps</strong> – maximum distortion.</li>
+<li><strong>nb_iter</strong> – number of iterations.</li>
+<li><strong>eps_iter</strong> – attack step size.</li>
+<li><strong>rand_init</strong> – (optional bool) random initialization.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>ord</strong> – (optional) the order of maximum distortion (inf or 2).</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.PGDAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.PGDAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given examples (x, y), returns their adversarial counterparts with
+an attack length of eps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – input tensor.</li>
+<li><strong>y</strong> – <p>label tensor.
+- if None and self.targeted=False, compute y as predicted</p>
+<blockquote>
+<div>labels.</div></blockquote>
+<ul>
+<li>if self.targeted=True, then y must be the targeted labels.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tensor containing perturbed inputs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.LinfPGDAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">LinfPGDAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>nb_iter=40</em>, <em>eps_iter=0.01</em>, <em>rand_init=True</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.LinfPGDAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>PGD Attack with order=Linf</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function.</li>
+<li><strong>eps</strong> – maximum distortion.</li>
+<li><strong>nb_iter</strong> – number of iterations.</li>
+<li><strong>eps_iter</strong> – attack step size.</li>
+<li><strong>rand_init</strong> – (optional bool) random initialization.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.L2PGDAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">L2PGDAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>nb_iter=40</em>, <em>eps_iter=0.01</em>, <em>rand_init=True</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.L2PGDAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>PGD Attack with order=L2</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function.</li>
+<li><strong>eps</strong> – maximum distortion.</li>
+<li><strong>nb_iter</strong> – number of iterations.</li>
+<li><strong>eps_iter</strong> – attack step size.</li>
+<li><strong>rand_init</strong> – (optional bool) random initialization.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.MomentumIterativeAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">MomentumIterativeAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>nb_iter=40</em>, <em>decay_factor=1.0</em>, <em>eps_iter=0.01</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.MomentumIterativeAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>The L-inf projected gradient descent attack (Dong et al. 2017).
+The attack performs nb_iter steps of size eps_iter, while always staying
+within eps from the initial point. The optimization is performed with
+momentum.
+Paper: <a class="reference external" href="https://arxiv.org/pdf/1710.06081.pdf">https://arxiv.org/pdf/1710.06081.pdf</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function.</li>
+<li><strong>eps</strong> – maximum distortion.</li>
+<li><strong>nb_iter</strong> – number of iterations</li>
+<li><strong>decay_factor</strong> – momentum decay factor.</li>
+<li><strong>eps_iter</strong> – attack step size.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.MomentumIterativeAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.MomentumIterativeAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given examples (x, y), returns their adversarial counterparts with
+an attack length of eps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – input tensor.</li>
+<li><strong>y</strong> – <p>label tensor.
+- if None and self.targeted=False, compute y as predicted</p>
+<blockquote>
+<div>labels.</div></blockquote>
+<ul>
+<li>if self.targeted=True, then y must be the targeted labels.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tensor containing perturbed inputs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.CarliniWagnerL2Attack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">CarliniWagnerL2Attack</code><span class="sig-paren">(</span><em>predict</em>, <em>num_classes</em>, <em>confidence=0</em>, <em>targeted=False</em>, <em>learning_rate=0.01</em>, <em>binary_search_steps=9</em>, <em>max_iterations=10000</em>, <em>abort_early=True</em>, <em>initial_const=0.001</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>loss_fn=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.CarliniWagnerL2Attack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Carlini, Nicholas, and David Wagner “Towards evaluating the
+robustness of neural networks” 2017 IEEE Symposium on Security and
+Privacy (SP) IEEE, 2017.
+<a class="reference external" href="https://arxiv.org/abs/1608.04644">https://arxiv.org/abs/1608.04644</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>num_classes</strong> – number of clasess.</li>
+<li><strong>confidence</strong> – confidence of the adversarial examples.</li>
+<li><strong>targeted</strong> – TODO</li>
+<li><strong>learning_rate</strong> – the learning rate for the attack algorithm</li>
+<li><strong>binary_search_steps</strong> – number of binary search times to find the optimum</li>
+<li><strong>max_iterations</strong> – the maximum number of iterations</li>
+<li><strong>abort_early</strong> – if set to true, abort early if getting stuck in local min</li>
+<li><strong>initial_const</strong> – initial value of the constant c</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>loss_fn</strong> – loss function</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.CarliniWagnerL2Attack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.CarliniWagnerL2Attack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the adversarial examples. This method should be overriden
+in any child class that implements an actual attack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the model’s input tensor.</li>
+<li><strong>**kwargs</strong> – <p>optional parameters used by child classes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">adversarial examples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.LBFGSAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">LBFGSAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>num_classes</em>, <em>batch_size=1</em>, <em>binary_search_steps=9</em>, <em>max_iterations=100</em>, <em>initial_const=0.01</em>, <em>clip_min=0</em>, <em>clip_max=1</em>, <em>loss_fn=None</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.LBFGSAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>The attack that uses L-BFGS to minimize the distance of the original
+and perturbed images</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>num_classes</strong> – number of clasess.</li>
+<li><strong>batch_size</strong> – number of samples in the batch</li>
+<li><strong>binary_search_steps</strong> – number of binary search times to find the optimum</li>
+<li><strong>max_iterations</strong> – the maximum number of iterations</li>
+<li><strong>initial_const</strong> – initial value of the constant c</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>loss_fn</strong> – loss function</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.LBFGSAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.LBFGSAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the adversarial examples. This method should be overriden
+in any child class that implements an actual attack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the model’s input tensor.</li>
+<li><strong>**kwargs</strong> – <p>optional parameters used by child classes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">adversarial examples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.SinglePixelAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">SinglePixelAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>max_pixels=100</em>, <em>clip_min=0.0</em>, <em>loss_fn=None</em>, <em>clip_max=1.0</em>, <em>comply_with_foolbox=False</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.SinglePixelAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single Pixel Attack
+Algorithm 1 in <a class="reference external" href="https://arxiv.org/pdf/1612.06299.pdf">https://arxiv.org/pdf/1612.06299.pdf</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>max_pixels</strong> – max number of pixels to perturb.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>loss_fn</strong> – loss function</li>
+<li><strong>targeted</strong> – if the attack is targeted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.SinglePixelAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.SinglePixelAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the adversarial examples. This method should be overriden
+in any child class that implements an actual attack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the model’s input tensor.</li>
+<li><strong>**kwargs</strong> – <p>optional parameters used by child classes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">adversarial examples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.LocalSearchAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">LocalSearchAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>p=1.0</em>, <em>r=1.5</em>, <em>loss_fn=None</em>, <em>d=5</em>, <em>t=5</em>, <em>k=1</em>, <em>round_ub=10</em>, <em>seed_ratio=0.1</em>, <em>max_nb_seeds=128</em>, <em>comply_with_foolbox=False</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.LocalSearchAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local Search Attack
+Algorithm 3 in <a class="reference external" href="https://arxiv.org/pdf/1612.06299.pdf">https://arxiv.org/pdf/1612.06299.pdf</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>p</strong> – parameter controls pixel complexity</li>
+<li><strong>r</strong> – perturbation value</li>
+<li><strong>loss_fn</strong> – loss function</li>
+<li><strong>d</strong> – the half side length of the neighbourhood square</li>
+<li><strong>t</strong> – the number of pixels perturbed at each round</li>
+<li><strong>k</strong> – the threshold for k-misclassification</li>
+<li><strong>round_ub</strong> – an upper bound on the number of rounds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.LocalSearchAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.LocalSearchAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the adversarial examples. This method should be overriden
+in any child class that implements an actual attack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the model’s input tensor.</li>
+<li><strong>**kwargs</strong> – <p>optional parameters used by child classes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">adversarial examples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.SpatialTransformAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">SpatialTransformAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>num_classes</em>, <em>confidence=0</em>, <em>initial_const=1</em>, <em>max_iterations=1000</em>, <em>search_steps=1</em>, <em>loss_fn=None</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>abort_early=True</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.SpatialTransformAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sptially Transformed Attack</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>num_classes</strong> – number of clasess.</li>
+<li><strong>confidence</strong> – confidence of the adversarial examples.</li>
+<li><strong>initial_const</strong> – initial value of the constant c</li>
+<li><strong>max_iterations</strong> – the maximum number of iterations</li>
+<li><strong>search_steps</strong> – number of search times to find the optimum</li>
+<li><strong>loss_fn</strong> – loss function</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>abort_early</strong> – if set to true, abort early if getting stuck in local min</li>
+<li><strong>targeted</strong> – if the attack is targeted</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.SpatialTransformAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.SpatialTransformAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the adversarial examples. This method should be overriden
+in any child class that implements an actual attack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the model’s input tensor.</li>
+<li><strong>**kwargs</strong> – <p>optional parameters used by child classes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">adversarial examples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="advertorch.attacks.JacobianSaliencyMapAttack">
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">JacobianSaliencyMapAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>num_classes</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>loss_fn=None</em>, <em>theta=1.0</em>, <em>gamma=1.0</em>, <em>comply_cleverhans=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.JacobianSaliencyMapAttack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Jacobian Saliency Map Attack
+This includes Algorithm 1 and 3 in v1</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>num_classes</strong> – number of clasess.</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+<li><strong>gamma</strong> – highest percentage of pixels can be modified</li>
+<li><strong>theta</strong> – perturb length, range is either [theta, 0], [0, theta]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.attacks.JacobianSaliencyMapAttack.perturb">
+<code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.JacobianSaliencyMapAttack.perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the adversarial examples. This method should be overriden
+in any child class that implements an actual attack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the model’s input tensor.</li>
+<li><strong>**kwargs</strong> – <p>optional parameters used by child classes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">adversarial examples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="defenses.html" class="btn btn-neutral float-right" title="advertorch.defenses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../user/FAQ.html" class="btn btn-neutral float-left" title="user.FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, tracy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
