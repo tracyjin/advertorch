@@ -12,9 +12,9 @@ from .base import Processor
 
 class JPEGFilter(Processor):
     """
-    JPEG Filter
+    JPEG Filter.
 
-    :param quality: quality of the output
+    :param quality: quality of the output.
     """
     def __init__(self, quality=75):
         super(JPEGFilter, self).__init__()

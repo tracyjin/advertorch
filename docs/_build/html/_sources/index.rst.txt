@@ -11,7 +11,6 @@ Welcome to Advertorch
    user/installation
    user/tutorial
    user/examples
-   user/FAQ
 
 
 

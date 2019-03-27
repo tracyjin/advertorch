@@ -81,10 +81,9 @@
             
               <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../user/installation.html"><code class="docutils literal notranslate"><span class="pre">user.installation</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/tutorial.html"><code class="docutils literal notranslate"><span class="pre">user.tutorial</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/examples.html"><code class="docutils literal notranslate"><span class="pre">user.examples</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/FAQ.html"><code class="docutils literal notranslate"><span class="pre">user.FAQ</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/examples.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Reference</span></p>
 <ul class="current">
@@ -158,9 +157,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-advertorch.defenses">
-<span id="advertorch-defenses"></span><h1><a class="reference internal" href="#module-advertorch.defenses" title="advertorch.defenses"><code class="xref py py-mod docutils literal notranslate"><span class="pre">advertorch.defenses</span></code></a><a class="headerlink" href="#module-advertorch.defenses" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="defenses">
+  <div class="section" id="advertorch-defenses">
+<h1><a class="reference internal" href="#module-advertorch.defenses" title="advertorch.defenses"><code class="xref py py-mod docutils literal notranslate"><span class="pre">advertorch.defenses</span></code></a><a class="headerlink" href="#advertorch-defenses" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-advertorch.defenses"></span><div class="section" id="defenses">
 <h2>Defenses<a class="headerlink" href="#defenses" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -168,25 +167,28 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.ConvSmoothing2D" title="advertorch.defenses.ConvSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConvSmoothing2D</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.Processor" title="advertorch.defenses.Processor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Processor</span></code></a></td>
 <td>Create a new <cite>Mock</cite> object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.AverageSmoothing2D" title="advertorch.defenses.AverageSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AverageSmoothing2D</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.ConvSmoothing2D" title="advertorch.defenses.ConvSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConvSmoothing2D</span></code></a></td>
 <td>Create a new <cite>Mock</cite> object.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.GaussianSmoothing2D" title="advertorch.defenses.GaussianSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GaussianSmoothing2D</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.AverageSmoothing2D" title="advertorch.defenses.AverageSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AverageSmoothing2D</span></code></a></td>
 <td>Create a new <cite>Mock</cite> object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.MedianSmoothing2D" title="advertorch.defenses.MedianSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MedianSmoothing2D</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.GaussianSmoothing2D" title="advertorch.defenses.GaussianSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GaussianSmoothing2D</span></code></a></td>
 <td>Create a new <cite>Mock</cite> object.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.JPEGFilter" title="advertorch.defenses.JPEGFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JPEGFilter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.MedianSmoothing2D" title="advertorch.defenses.MedianSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MedianSmoothing2D</span></code></a></td>
 <td>Create a new <cite>Mock</cite> object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.BitSqueezing" title="advertorch.defenses.BitSqueezing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitSqueezing</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.JPEGFilter" title="advertorch.defenses.JPEGFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JPEGFilter</span></code></a></td>
 <td>Create a new <cite>Mock</cite> object.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.BinaryFilter" title="advertorch.defenses.BinaryFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryFilter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.BitSqueezing" title="advertorch.defenses.BitSqueezing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitSqueezing</span></code></a></td>
+<td>Create a new <cite>Mock</cite> object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.BinaryFilter" title="advertorch.defenses.BinaryFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryFilter</span></code></a></td>
 <td>Create a new <cite>Mock</cite> object.</td>
 </tr>
 </tbody>
@@ -194,6 +196,11 @@
 </div>
 <div class="section" id="detailed-description">
 <h2>Detailed description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="advertorch.defenses.Processor">
+<code class="descclassname">advertorch.defenses.</code><code class="descname">Processor</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.Processor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="advertorch.defenses.ConvSmoothing2D">
 <code class="descclassname">advertorch.defenses.</code><code class="descname">ConvSmoothing2D</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.ConvSmoothing2D" title="Permalink to this definition">¶</a></dt>

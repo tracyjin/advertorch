@@ -36,16 +36,17 @@ def perturb_iterative(xvar, yvar, predict, nb_iter, eps, eps_iter, loss_fn,
 
     :param xvar: input data.
     :param yvar: input labels.
-    %(predict)s
-    %(nb_iter)s
-    %(eps)s
-    %(eps_iter)s
-    %(loss_fn)s
+    :param predict: forward pass function.
+    :param nb_iter: number of iterations.
+    :param eps: maximum distortion.
+    :param eps_iter: attack step size.
+    :param loss_fn: loss function.
     :param delta_init: (optional) tensor contains the random initialization.
     :param minimize: (optional bool) whether to minimize or maximize the loss.
-    %(ord)s
-    %(clip_min)s
-    %(clip_max)s
+    :param ord: (optional) the order of maximum distortion (inf or 2).
+    :param clip_min: mininum value per input dimension.
+    :param clip_max: maximum value per input dimension.
+
     :return: tensor containing the perturbed input.
     """
     if delta_init is not None:

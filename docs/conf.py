@@ -17,8 +17,9 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import os
 import sys
+sys.path.insert(0, os.path.abspath('../..'))
 from unittest.mock import Mock
-sys.path.insert(0, os.path.abspath('..'))
+
 
 # mock imports, see https://stackoverflow.com/q/15889621
 # autodoc_mock_imports = ['tensorflow'] does not seem to work
@@ -48,6 +49,8 @@ sys.modules['scipy._lib'] = Mock()
 # import torch
 # import torch.nn
 import advertorch
+# from advertorch import attacks
+# from advertorch import defenses
 # import advertorch.attacks
 
 

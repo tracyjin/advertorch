@@ -1,5 +1,5 @@
 :mod:`advertorch.defenses`
-==========================
+=========================
 
 .. automodule:: advertorch.defenses
 
@@ -9,6 +9,7 @@ Defenses
 .. autosummary::
    :nosignatures:
 
+   Processor
    ConvSmoothing2D
    AverageSmoothing2D
    GaussianSmoothing2D
@@ -20,6 +21,9 @@ Defenses
 
 Detailed description
 --------------------
+
+.. autoclass:: Processor
+   :members:
 
 .. autoclass:: ConvSmoothing2D
    :members:
@@ -41,3 +45,5 @@ Detailed description
 
 .. autoclass:: BinaryFilter
    :members:
+
+

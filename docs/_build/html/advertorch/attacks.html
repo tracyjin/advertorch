@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="advertorch.defenses" href="defenses.html" />
-    <link rel="prev" title="user.FAQ" href="../user/FAQ.html" /> 
+    <link rel="prev" title="Examples" href="../user/examples.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,10 +82,9 @@
             
               <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../user/installation.html"><code class="docutils literal notranslate"><span class="pre">user.installation</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/tutorial.html"><code class="docutils literal notranslate"><span class="pre">user.tutorial</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/examples.html"><code class="docutils literal notranslate"><span class="pre">user.examples</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/FAQ.html"><code class="docutils literal notranslate"><span class="pre">user.FAQ</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/examples.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Reference</span></p>
 <ul class="current">
@@ -226,6 +225,20 @@
 <dt id="advertorch.attacks.Attack">
 <em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">Attack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn</em>, <em>clip_min</em>, <em>clip_max</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.Attack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract base class for all attack classes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>predict</strong> – forward pass function.</li>
+<li><strong>loss_fn</strong> – loss function that takes .</li>
+<li><strong>clip_min</strong> – mininum value per input dimension.</li>
+<li><strong>clip_max</strong> – maximum value per input dimension.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="advertorch.attacks.Attack.perturb">
 <code class="descname">perturb</code><span class="sig-paren">(</span><em>x</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.Attack.perturb" title="Permalink to this definition">¶</a></dt>
@@ -425,7 +438,7 @@ Paper: <a class="reference external" href="https://arxiv.org/pdf/1611.01236.pdf"
 
 <dl class="class">
 <dt id="advertorch.attacks.PGDAttack">
-<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">PGDAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>nb_iter=40</em>, <em>eps_iter=0.01</em>, <em>rand_init=True</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>ord=&lt;Mock name='mock.inf' id='4493153224'&gt;</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.PGDAttack" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">advertorch.attacks.</code><code class="descname">PGDAttack</code><span class="sig-paren">(</span><em>predict</em>, <em>loss_fn=None</em>, <em>eps=0.3</em>, <em>nb_iter=40</em>, <em>eps_iter=0.01</em>, <em>rand_init=True</em>, <em>clip_min=0.0</em>, <em>clip_max=1.0</em>, <em>ord=&lt;Mock name='mock.inf' id='4407064616'&gt;</em>, <em>targeted=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/attacks.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.attacks.PGDAttack" title="Permalink to this definition">¶</a></dt>
 <dd><p>The projected gradient descent attack (Madry et al, 2017).
 The attack performs nb_iter steps of size eps_iter, while always staying
 within eps from the initial point.
@@ -899,7 +912,7 @@ in any child class that implements an actual attack.</p>
         <a href="defenses.html" class="btn btn-neutral float-right" title="advertorch.defenses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../user/FAQ.html" class="btn btn-neutral float-left" title="user.FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../user/examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
