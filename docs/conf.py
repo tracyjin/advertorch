@@ -18,33 +18,32 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
-from unittest.mock import Mock
 
 
-# mock imports, see https://stackoverflow.com/q/15889621
-# autodoc_mock_imports = ['tensorflow'] does not seem to work
-sys.modules['numpy'] = Mock()
-sys.modules['numpy.linalg'] = Mock()
-sys.modules['scipy'] = Mock()
-sys.modules['scipy.optimize'] = Mock()
-sys.modules['scipy.interpolate'] = Mock()
-sys.modules['scipy.ndimage'] = Mock()
-sys.modules['scipy.ndimage.filters'] = Mock()
-sys.modules['tensorflow'] = Mock()
-sys.modules['theano'] = Mock()
-sys.modules['theano.tensor'] = Mock()
-sys.modules['torch'] = Mock()
-sys.modules['torch.nn'] = Mock()
-sys.modules['torch.nn.functional'] = Mock()
-sys.modules['torch.optim'] = Mock()
-sys.modules['torch.nn.modules'] = Mock()
-sys.modules['torch.nn.modules.utils'] = Mock()
-sys.modules['torch.utils'] = Mock()
-sys.modules['torch.utils.model_zoo'] = Mock()
-sys.modules['torch.nn.init'] = Mock()
-sys.modules['torch.utils.data'] = Mock()
-sys.modules['randomstate'] = Mock()
-sys.modules['scipy._lib'] = Mock()
+autodoc_mock_imports = [
+'numpy',
+'numpy.linalg',
+'scipy',
+'scipy.optimize',
+'scipy.interpolate',
+'scipy.ndimage',
+'scipy.ndimage.filters',
+'tensorflow',
+'theano',
+'theano.tensor',
+'torch',
+'torch.nn',
+'torch.nn.functional',
+'torch.optim',
+'torch.nn.modules',
+'torch.nn.modules.utils',
+'torch.utils',
+'torch.utils.model_zoo',
+'torch.nn.init',
+'torch.utils.data',
+'randomstate',
+'scipy._lib',
+]
 
 # import torch
 # import torch.nn
@@ -128,18 +127,18 @@ def linkcode_resolve(domain, info):
         import inspect
         import os
         fn = inspect.getsourcefile(obj)
-        fn = os.path.relpath(fn, start=os.path.dirname(foolbox.__file__))
+        fn = os.path.relpath(fn, start=os.path.dirname(advertorch.__file__))
         source, lineno = inspect.getsourcelines(obj)
         return fn, lineno, lineno + len(source) - 1
 
     if domain != 'py' or not info['module']:
         return None
     try:
-        filename = 'foolbox/%s#L%d-L%d' % find_source()
+        filename = 'advertorch/%s#L%d-L%d' % find_source()
     except Exception:
         filename = info['module'].replace('.', '/') + '.py'
     tag = 'master'
-    url = "https://github.com/bethgelab/foolbox/blob/%s/%s"
+    url = "https://github.com/tracyjin/advertorch/blob/%s/%s"
     return url % (tag, filename)
 
 

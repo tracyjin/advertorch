@@ -21,11 +21,21 @@
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -158,6 +168,7 @@
  <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
+ | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#J"><strong>J</strong></a>
@@ -178,7 +189,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="advertorch/attacks.html#advertorch.attacks.Attack">Attack (class in advertorch.attacks)</a>
 </li>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.AverageSmoothing2D">AverageSmoothing2D (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.AverageSmoothing2D">AverageSmoothing2D (class in advertorch.defenses)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -186,11 +197,11 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.BinaryFilter">BinaryFilter (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.BinaryFilter">BinaryFilter (class in advertorch.defenses)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.BitSqueezing">BitSqueezing (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.BitSqueezing">BitSqueezing (class in advertorch.defenses)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -202,7 +213,15 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.ConvSmoothing2D">ConvSmoothing2D (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.ConvSmoothing2D">ConvSmoothing2D (class in advertorch.defenses)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.Processor.extra_repr">extra_repr() (advertorch.defenses.Processor method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -212,13 +231,25 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="advertorch/attacks.html#advertorch.attacks.FastFeatureAttack">FastFeatureAttack (class in advertorch.attacks)</a>
 </li>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.BitSqueezing.forward">forward() (advertorch.defenses.BitSqueezing method)</a>
+
+      <ul>
+        <li><a href="advertorch/defenses.html#advertorch.defenses.ConvSmoothing2D.forward">(advertorch.defenses.ConvSmoothing2D method)</a>
+</li>
+        <li><a href="advertorch/defenses.html#advertorch.defenses.JPEGFilter.forward">(advertorch.defenses.JPEGFilter method)</a>
+</li>
+        <li><a href="advertorch/defenses.html#advertorch.defenses.MedianSmoothing2D.forward">(advertorch.defenses.MedianSmoothing2D method)</a>
+</li>
+        <li><a href="advertorch/defenses.html#advertorch.defenses.Processor.forward">(advertorch.defenses.Processor method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.GaussianSmoothing2D">GaussianSmoothing2D (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.GaussianSmoothing2D">GaussianSmoothing2D (class in advertorch.defenses)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -236,7 +267,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.JPEGFilter">JPEGFilter (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.JPEGFilter">JPEGFilter (class in advertorch.defenses)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -264,7 +295,7 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.MedianSmoothing2D">MedianSmoothing2D (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.MedianSmoothing2D">MedianSmoothing2D (class in advertorch.defenses)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -306,7 +337,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="advertorch/attacks.html#advertorch.attacks.PGDAttack">PGDAttack (class in advertorch.attacks)</a>
 </li>
-      <li><a href="advertorch/defenses.html#advertorch.defenses.Processor">Processor (in module advertorch.defenses)</a>
+      <li><a href="advertorch/defenses.html#advertorch.defenses.Processor">Processor (class in advertorch.defenses)</a>
 </li>
   </ul></td>
 </tr></table>

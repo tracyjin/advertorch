@@ -20,11 +20,21 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -168,73 +178,237 @@
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.Processor" title="advertorch.defenses.Processor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Processor</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.ConvSmoothing2D" title="advertorch.defenses.ConvSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConvSmoothing2D</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td>Conv Smoothing 2D.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.AverageSmoothing2D" title="advertorch.defenses.AverageSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AverageSmoothing2D</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td>Average Smoothing 2D.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.GaussianSmoothing2D" title="advertorch.defenses.GaussianSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GaussianSmoothing2D</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td>Gaussian Smoothing 2D.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.MedianSmoothing2D" title="advertorch.defenses.MedianSmoothing2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MedianSmoothing2D</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td>Median Smoothing 2D.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.JPEGFilter" title="advertorch.defenses.JPEGFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JPEGFilter</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td>JPEG Filter.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#advertorch.defenses.BitSqueezing" title="advertorch.defenses.BitSqueezing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitSqueezing</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td>Bit Squeezing.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#advertorch.defenses.BinaryFilter" title="advertorch.defenses.BinaryFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryFilter</span></code></a></td>
-<td>Create a new <cite>Mock</cite> object.</td>
+<td>Binary Filter.</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="detailed-description">
 <h2>Detailed description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h2>
-<dl class="attribute">
+<dl class="class">
 <dt id="advertorch.defenses.Processor">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">Processor</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.Processor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">Processor</code><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/base.py#L10-L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.Processor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="advertorch.defenses.Processor.extra_repr">
+<code class="descname">extra_repr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/base.py#L23-L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.Processor.extra_repr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the extra representation of the module</p>
+<p>To print customized extra information, you should reimplement
+this method in your own modules. Both single-line and multi-line
+strings are acceptable.</p>
+</dd></dl>
 
-<dl class="attribute">
+<dl class="method">
+<dt id="advertorch.defenses.Processor.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/base.py#L20-L21"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.Processor.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="advertorch.defenses.ConvSmoothing2D">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">ConvSmoothing2D</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.ConvSmoothing2D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">ConvSmoothing2D</code><span class="sig-paren">(</span><em>kernel</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/smoothing.py#L47-L59"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.ConvSmoothing2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conv Smoothing 2D.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kernel_size</strong> – size of the convolving kernel.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.defenses.ConvSmoothing2D.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/smoothing.py#L58-L59"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.ConvSmoothing2D.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
 
-<dl class="attribute">
+</dd></dl>
+
+<dl class="class">
 <dt id="advertorch.defenses.AverageSmoothing2D">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">AverageSmoothing2D</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.AverageSmoothing2D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">AverageSmoothing2D</code><span class="sig-paren">(</span><em>channels</em>, <em>kernel_size</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/smoothing.py#L76-L87"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.AverageSmoothing2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Smoothing 2D.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>channels</strong> – number of channels in the output.</li>
+<li><strong>kernel_size</strong> – aperture size.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-<dl class="attribute">
+<dl class="class">
 <dt id="advertorch.defenses.GaussianSmoothing2D">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">GaussianSmoothing2D</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.GaussianSmoothing2D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">GaussianSmoothing2D</code><span class="sig-paren">(</span><em>sigma</em>, <em>channels</em>, <em>kernel_size=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/smoothing.py#L62-L73"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.GaussianSmoothing2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gaussian Smoothing 2D.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sigma</strong> – sigma of the Gaussian.</li>
+<li><strong>channels</strong> – number of channels in the output.</li>
+<li><strong>kernel_size</strong> – aperture size.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-<dl class="attribute">
+<dl class="class">
 <dt id="advertorch.defenses.MedianSmoothing2D">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">MedianSmoothing2D</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.MedianSmoothing2D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">MedianSmoothing2D</code><span class="sig-paren">(</span><em>kernel_size=3</em>, <em>stride=1</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/smoothing.py#L18-L44"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.MedianSmoothing2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Median Smoothing 2D.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>kernel_size</strong> – aperture linear size; must be odd and greater than 1.</li>
+<li><strong>stride</strong> – stride of the convolution.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.defenses.MedianSmoothing2D.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/smoothing.py#L39-L44"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.MedianSmoothing2D.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
 
-<dl class="attribute">
+</dd></dl>
+
+<dl class="class">
 <dt id="advertorch.defenses.JPEGFilter">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">JPEGFilter</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.JPEGFilter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">JPEGFilter</code><span class="sig-paren">(</span><em>quality=75</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/jpeg.py#L13-L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.JPEGFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>JPEG Filter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>quality</strong> – quality of the output.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.defenses.JPEGFilter.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/jpeg.py#L23-L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.JPEGFilter.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
 
-<dl class="attribute">
+</dd></dl>
+
+<dl class="class">
 <dt id="advertorch.defenses.BitSqueezing">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">BitSqueezing</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.BitSqueezing" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">BitSqueezing</code><span class="sig-paren">(</span><em>bit_depth</em>, <em>vmin=0.0</em>, <em>vmax=1.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/bitsqueezing.py#L13-L33"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.BitSqueezing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bit Squeezing.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bit_depth</strong> – bit depth.</li>
+<li><strong>vmin</strong> – min value.</li>
+<li><strong>vmax</strong> – max value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="advertorch.defenses.BitSqueezing.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/bitsqueezing.py#L31-L33"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.BitSqueezing.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
 
-<dl class="attribute">
+</dd></dl>
+
+<dl class="class">
 <dt id="advertorch.defenses.BinaryFilter">
-<code class="descclassname">advertorch.defenses.</code><code class="descname">BinaryFilter</code><a class="reference external" href="https://github.com/bethgelab/foolbox/blob/master/advertorch/defenses.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.BinaryFilter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property">class </em><code class="descclassname">advertorch.defenses.</code><code class="descname">BinaryFilter</code><span class="sig-paren">(</span><em>vmin=0.0</em>, <em>vmax=1.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/tracyjin/advertorch/blob/master/advertorch/defenses/bitsqueezing.py#L36-L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#advertorch.defenses.BinaryFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binary Filter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vmin</strong> – min value.</li>
+<li><strong>vmax</strong> – max value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 </div>
