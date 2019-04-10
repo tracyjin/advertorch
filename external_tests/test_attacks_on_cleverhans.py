@@ -32,7 +32,8 @@ from cleverhans.attacks import SaliencyMapMethod
 from advertorch.attacks import CarliniWagnerL2Attack
 from advertorch.attacks import GradientAttack
 from advertorch.attacks import GradientSignAttack
-from advertorch.attacks import MomentumIterativeAttack
+from advertorch.attacks import L2MomentumIterativeAttack
+from advertorch.attacks import LinfMomentumIterativeAttack
 from advertorch.attacks import LinfPGDAttack
 from advertorch.attacks import FastFeatureAttack
 from advertorch.attacks import LinfBasicIterativeAttack
@@ -123,7 +124,7 @@ attack_kwargs = {
             rtol=RTOL,
         ),
     },
-    MomentumIterativeAttack: {
+    L2MomentumIterativeAttack: {
         "cl_class": MomentumIterativeMethod,
         "kwargs": dict(
             eps=EPS,
@@ -132,37 +133,37 @@ attack_kwargs = {
             clip_max=1.0,
             decay_factor=1.,
             nb_iter=NB_ITER,
-            # ord=np.inf,
         ),
         "at_kwargs": dict(
         ),
         "cl_kwargs": dict(
+            ord=2,
         ),
         "thresholds": dict(
             atol=ATOL,
             rtol=RTOL,
         ),
     },
-    # MomentumIterativeAttack: {
-    #     "cl_class": MomentumIterativeMethod,
-    #     "kwargs": dict(
-    #         eps=EPS,
-    #         eps_iter=0.01,
-    #         clip_min=0.0,
-    #         clip_max=1.0,
-    #         decay_factor=1.,
-    #         nb_iter=NB_ITER,
-    #         ord=2,
-    #     ),
-    #     "at_kwargs": dict(
-    #     ),
-    #     "cl_kwargs": dict(
-    #     ),
-    #     "thresholds": dict(
-    #         atol=ATOL,
-    #         rtol=RTOL,
-    #     ),
-    # },
+    LinfMomentumIterativeAttack: {
+        "cl_class": MomentumIterativeMethod,
+        "kwargs": dict(
+            eps=EPS,
+            eps_iter=0.01,
+            clip_min=0.0,
+            clip_max=1.0,
+            decay_factor=1.,
+            nb_iter=NB_ITER,
+        ),
+        "at_kwargs": dict(
+        ),
+        "cl_kwargs": dict(
+            ord=np.inf,
+        ),
+        "thresholds": dict(
+            atol=ATOL,
+            rtol=RTOL,
+        ),
+    },
     CarliniWagnerL2Attack: {
         "cl_class": CarliniWagnerL2,
         "kwargs": dict(
@@ -434,20 +435,18 @@ def test_fgm_attack(targeted):
 
 
 @pytest.mark.parametrize("targeted", [False, True])
-def test_linf_momentum_iterative_attack(targeted):
-    attack_kwargs[MomentumIterativeAttack]["kwargs"]["ord"] = np.inf
+def test_l2_momentum_iterative_attack(targeted):
     compare_attacks(
-        MomentumIterativeAttack,
-        attack_kwargs[MomentumIterativeAttack],
+        L2MomentumIterativeAttack,
+        attack_kwargs[L2MomentumIterativeAttack],
         targeted)
 
 
 @pytest.mark.parametrize("targeted", [False, True])
-def test_l2_momentum_iterative_attack(targeted):
-    attack_kwargs[MomentumIterativeAttack]["kwargs"]["ord"] = 2
+def test_linf_momentum_iterative_attack(targeted):
     compare_attacks(
-        MomentumIterativeAttack,
-        attack_kwargs[MomentumIterativeAttack],
+        LinfMomentumIterativeAttack,
+        attack_kwargs[LinfMomentumIterativeAttack],
         targeted)
 
 

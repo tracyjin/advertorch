@@ -273,6 +273,7 @@ class MomentumIterativeAttack(Attack, LabelMixin):
     :param clip_min: mininum value per input dimension.
     :param clip_max: maximum value per input dimension.
     :param targeted: if the attack is targeted.
+    :param ord: (optional) the order of maximum distortion (inf or 2).
     """
 
     def __init__(
@@ -349,6 +350,36 @@ class MomentumIterativeAttack(Attack, LabelMixin):
 
         rval = x + delta.data
         return rval
+
+
+class L2MomentumIterativeAttack(MomentumIterativeAttack):
+    def __init__(
+            self, predict, loss_fn=None, eps=0.3, nb_iter=40, decay_factor=1.,
+            eps_iter=0.01, clip_min=0., clip_max=1., targeted=False):
+        """
+        Create an instance of the MomentumIterativeAttack.
+
+        """
+        ord = 2
+        super(L2MomentumIterativeAttack, self).__init__(
+            predict, loss_fn, eps, nb_iter, decay_factor,
+            eps_iter, clip_min, clip_max, targeted, ord)
+
+
+class LinfMomentumIterativeAttack(MomentumIterativeAttack):
+    def __init__(
+            self, predict, loss_fn=None, eps=0.3, nb_iter=40, decay_factor=1.,
+            eps_iter=0.01, clip_min=0., clip_max=1., targeted=False):
+        """
+        Create an instance of the MomentumIterativeAttack.
+
+        """
+        ord = np.inf
+        super(LinfMomentumIterativeAttack, self).__init__(
+            predict, loss_fn, eps, nb_iter, decay_factor,
+            eps_iter, clip_min, clip_max, targeted, ord)
+
+
 
 
 class FastFeatureAttack(Attack):
