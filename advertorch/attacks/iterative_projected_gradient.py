@@ -243,7 +243,6 @@ class LinfBasicIterativeAttack(PGDAttack):
     :param rand_init: (optional bool) random initialization.
     :param clip_min: mininum value per input dimension.
     :param clip_max: maximum value per input dimension.
-    :param ord: (optional) the order of maximum distortion (inf or 2).
     :param targeted: if the attack is targeted.
     """
 
@@ -353,6 +352,20 @@ class MomentumIterativeAttack(Attack, LabelMixin):
 
 
 class L2MomentumIterativeAttack(MomentumIterativeAttack):
+    """
+    The L2 Momentum Iterative Attack
+    Paper: https://arxiv.org/pdf/1710.06081.pdf
+
+    :param predict: forward pass function.
+    :param loss_fn: loss function.
+    :param eps: maximum distortion.
+    :param nb_iter: number of iterations
+    :param decay_factor: momentum decay factor.
+    :param eps_iter: attack step size.
+    :param clip_min: mininum value per input dimension.
+    :param clip_max: maximum value per input dimension.
+    :param targeted: if the attack is targeted.
+    """
     def __init__(
             self, predict, loss_fn=None, eps=0.3, nb_iter=40, decay_factor=1.,
             eps_iter=0.01, clip_min=0., clip_max=1., targeted=False):
@@ -367,6 +380,20 @@ class L2MomentumIterativeAttack(MomentumIterativeAttack):
 
 
 class LinfMomentumIterativeAttack(MomentumIterativeAttack):
+    """
+    The Linf Momentum Iterative Attack
+    Paper: https://arxiv.org/pdf/1710.06081.pdf
+
+    :param predict: forward pass function.
+    :param loss_fn: loss function.
+    :param eps: maximum distortion.
+    :param nb_iter: number of iterations
+    :param decay_factor: momentum decay factor.
+    :param eps_iter: attack step size.
+    :param clip_min: mininum value per input dimension.
+    :param clip_max: maximum value per input dimension.
+    :param targeted: if the attack is targeted.
+    """
     def __init__(
             self, predict, loss_fn=None, eps=0.3, nb_iter=40, decay_factor=1.,
             eps_iter=0.01, clip_min=0., clip_max=1., targeted=False):
