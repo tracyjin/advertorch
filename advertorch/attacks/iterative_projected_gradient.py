@@ -277,7 +277,7 @@ class MomentumIterativeAttack(Attack, LabelMixin):
 
     def __init__(
             self, predict, loss_fn=None, eps=0.3, nb_iter=40, decay_factor=1.,
-            eps_iter=0.01, clip_min=0., clip_max=1., targeted=False):
+            eps_iter=0.01, clip_min=0., clip_max=1., targeted=False, ord=np.inf):
         """
         Create an instance of the MomentumIterativeAttack.
 
@@ -289,6 +289,7 @@ class MomentumIterativeAttack(Attack, LabelMixin):
         self.decay_factor = decay_factor
         self.eps_iter = eps_iter
         self.targeted = targeted
+        self.ord = ord
         if self.loss_fn is None:
             self.loss_fn = nn.CrossEntropyLoss(reduction="sum")
 
@@ -329,14 +330,22 @@ class MomentumIterativeAttack(Attack, LabelMixin):
             # according to the paper it should be .sum(), but in their
             #   implementations (both cleverhans and the link from the paper)
             #   it is .mean(), but actually it shouldn't matter
-
-            delta.data += self.eps_iter * torch.sign(g)
-            # delta.data += self.eps / self.nb_iter * torch.sign(g)
-
-            delta.data = clamp(
-                delta.data, min=-self.eps, max=self.eps)
-            delta.data = clamp(
-                x + delta.data, min=self.clip_min, max=self.clip_max) - x
+            if self.ord == np.inf:
+                delta.data += self.eps_iter * torch.sign(g)
+                delta.data = clamp(
+                    delta.data, min=-self.eps, max=self.eps)
+                delta.data = clamp(
+                    x + delta.data, min=self.clip_min, max=self.clip_max) - x
+            elif self.ord == 2:
+                delta.data += self.eps_iter * normalize_by_pnorm(g, p=2)
+                delta.data *= clamp(
+                    (self.eps * normalize_by_pnorm(delta.data, p=2) / delta.data),
+                    max=1.)
+                delta.data = clamp(
+                    x + delta.data, min=self.clip_min, max=self.clip_max) - x
+            else:
+                error = "Only ord = inf and ord = 2 have been implemented"
+                raise NotImplementedError(error)
 
         rval = x + delta.data
         return rval

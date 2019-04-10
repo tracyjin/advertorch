@@ -51,7 +51,7 @@ EPS = 0.08
 
 ATOL = 1e-4
 RTOL = 1e-4
-NB_ITER = 0
+NB_ITER = 5
 
 # XXX: carlini still doesn't pass sometimes under certain random seed
 seed = 66666
@@ -132,6 +132,7 @@ attack_kwargs = {
             clip_max=1.0,
             decay_factor=1.,
             nb_iter=NB_ITER,
+            # ord=np.inf,
         ),
         "at_kwargs": dict(
         ),
@@ -142,6 +143,26 @@ attack_kwargs = {
             rtol=RTOL,
         ),
     },
+    # MomentumIterativeAttack: {
+    #     "cl_class": MomentumIterativeMethod,
+    #     "kwargs": dict(
+    #         eps=EPS,
+    #         eps_iter=0.01,
+    #         clip_min=0.0,
+    #         clip_max=1.0,
+    #         decay_factor=1.,
+    #         nb_iter=NB_ITER,
+    #         ord=2,
+    #     ),
+    #     "at_kwargs": dict(
+    #     ),
+    #     "cl_kwargs": dict(
+    #     ),
+    #     "thresholds": dict(
+    #         atol=ATOL,
+    #         rtol=RTOL,
+    #     ),
+    # },
     CarliniWagnerL2Attack: {
         "cl_class": CarliniWagnerL2,
         "kwargs": dict(
@@ -326,7 +347,6 @@ def genenerate_ptb_pt(adversary, inputs, targets, delta=None):
 
 
 def compare_at_cl(ptb_at, ptb_cl, atol, rtol):
-    print("++++++++++++")
     assert np.allclose(ptb_at, ptb_cl, atol=atol, rtol=rtol), \
         (np.abs(ptb_at - ptb_cl).max())
 
@@ -414,7 +434,17 @@ def test_fgm_attack(targeted):
 
 
 @pytest.mark.parametrize("targeted", [False, True])
-def test_momentum_iterative_attack(targeted):
+def test_linf_momentum_iterative_attack(targeted):
+    attack_kwargs[MomentumIterativeAttack]["kwargs"]["ord"] = np.inf
+    compare_attacks(
+        MomentumIterativeAttack,
+        attack_kwargs[MomentumIterativeAttack],
+        targeted)
+
+
+@pytest.mark.parametrize("targeted", [False, True])
+def test_l2_momentum_iterative_attack(targeted):
+    attack_kwargs[MomentumIterativeAttack]["kwargs"]["ord"] = 2
     compare_attacks(
         MomentumIterativeAttack,
         attack_kwargs[MomentumIterativeAttack],
